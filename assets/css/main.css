@@ -1,3 +1,5 @@
+@import "variables.css";
+
 * {
 	margin: 0;
 	padding: 0;
@@ -6,13 +8,21 @@
 
 html {
 	scroll-behavior: smooth;
-	scroll-padding-top: 100px;
 }
 
 body {
 	background: #0e0e10;
 	color: #e8e6e3;
 	font-family: Outfit, sans-serif;
+}
+
+#particles-js {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
 }
 
 p {
@@ -52,10 +62,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-	color: #9a8c98;
+	color: var(--main-color);
 }
 
 .hero {
+	position: relative;
+	z-index: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -64,7 +76,6 @@ nav ul li a:hover {
 	margin-bottom: 15px;
 	text-align: center;
 }
-
 .hero h1 {
 	font-size: 4.4em;
 	animation: slideInFromBottom 1s ease-in-out forwards;
@@ -79,14 +90,13 @@ nav ul li a:hover {
 
 .aboutme {
 	width: 100%;
-	margin-top: 40px;
+	min-height: 100vh;
 	padding: 40px 20px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	text-align: center;
-	scroll-margin-top: 170px;
 }
 .aboutme h2 {
 	margin-bottom: 20px;
@@ -95,8 +105,15 @@ nav ul li a:hover {
 
 .aboutme p {
 	max-width: 700px;
-	margin: 0 auto;
+	margin: 0 auto 30px auto;
 	font-size: 1.5em;
+}
+
+.skills-title {
+	margin-top: 80px;
+	margin-bottom: 40px;
+	font-size: 3em;
+	color: #fff;
 }
 
 .social a {
@@ -104,7 +121,7 @@ nav ul li a:hover {
 	background: none;
 	border: none;
 	padding: 15px;
-	font-size: 32px;
+	font-size: 36px;
 	color: white;
 	cursor: pointer;
 	transition: 0.3s;
@@ -114,20 +131,7 @@ nav ul li a:hover {
 
 .social a:hover {
 	transform: scale(1.4);
-	color: rgb(193, 193, 193);
-}
-
-.skills {
-	width: 100%;
-	padding: 80px 20px;
-	text-align: center;
-}
-
-.skills h2 {
-	font-size: 3em;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	color: #fff;
+	color: var(--main-color);
 }
 
 .skills-container {
@@ -183,143 +187,11 @@ nav ul li a:hover {
 	background-color: rgb(96, 125, 139, 0.8);
 }
 
-.projects {
-	min-height: 100vh;
-	width: 100%;
-	padding: 0 20px;
-	text-align: center;
-}
-
-.projects h2 {
-	font-size: 3em;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	color: #fff;
-}
-
-.projects-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 50px;
-	justify-content: center;
-}
-
-.project-item {
-	background-color: #17171b;
-	border-radius: 15px;
-	width: 400px;
-	height: auto;
-	min-height: 300px;
-	display: flex;
-	flex-direction: column;
-	padding: 40px 30px;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-item:hover {
-	transform: translate(7px, -7px) scale(1.03);
-	box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-}
-.project-item h3 {
-	font-size: 2.5em;
-	margin-bottom: 20px;
-}
-
-.project-item img {
-	border-radius: 10px;
-	margin-bottom: 20px;
-	max-width: 100%;
-	width: 200px;
-	height: auto;
-	align-self: center;
-}
-
-.project-item p {
-	font-size: 1.1em;
-	margin-bottom: 15px;
-}
-
-.project-item i {
-	margin-top: 20px;
-	font-size: 3em;
-}
-
-.project-item a {
-	text-decoration: none;
-	color: white;
-}
-
-.projects-links {
-	margin-top: auto;
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	transition: transform 0.5s ease;
-}
-
-.projects-links a {
-	display: inline-block;
-	color: #fff;
-	font-size: 1.1em;
-	transition: all 0.3s ease;
-}
-
-.projects-links a:hover {
-	transform: scale(1.2);
-	color: rgb(193, 193, 193);
-}
-
 footer {
 	text-align: center;
 	color: #888;
 	font-size: 0.9em;
 	padding: 20px 10px;
-}
-
-.error-404 {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	background-color: #0e0e10;
-	color: white;
-}
-
-.error-404 h1 {
-	font-size: 10em;
-	color: #ff6b6b;
-	text-shadow: 0 0 20px rgba(255, 107, 107, 0.4),
-		0 0 50px rgba(255, 107, 107, 0.1);
-	letter-spacing: 6px;
-	animation: pulse 2s infinite;
-}
-
-.error-404 p {
-	font-size: 2em;
-	margin-top: 40px;
-}
-
-.error-404 button {
-	cursor: pointer;
-	padding: 20px 70px;
-	border: none;
-	border-radius: 10px;
-	font-size: 1.8em;
-	background-color: #17171b;
-	margin-top: 70px;
-	color: white;
-	box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-	transition: background-color 0.3s ease, transform 0.3s ease,
-		box-shadow 0.3s ease, color 0.3s ease;
-}
-
-.error-404 button:hover {
-	background-color: rgba(255, 107, 107, 0.15);
-	color: rgb(193, 193, 193);
-	transform: scale(1.05);
-	box-shadow: 0 0 25px rgba(255, 107, 107, 0.2);
 }
 
 @keyframes slideInFromBottom {
@@ -333,15 +205,6 @@ footer {
 	}
 }
 
-@keyframes pulse {
-	0%,
-	100% {
-		text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
-	}
-	50% {
-		text-shadow: 0 0 40px rgba(255, 107, 107, 0.6);
-	}
-}
 @media (max-width: 768px) {
 	.hamburger {
 		display: block;
@@ -382,11 +245,6 @@ footer {
 
 	.skill-item {
 		width: 45%;
-	}
-
-	.project-item {
-		width: 90%;
-		height: auto;
 	}
 }
 
