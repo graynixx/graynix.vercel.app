@@ -74,3 +74,17 @@ body {
 		text-shadow: 0 0 40px rgba(255, 107, 107, 0.6);
 	}
 }
+
+@media (max-width: 768px) {
+	.error-404 h1 {
+		font-size: 4em;
+	}
+	.error-404 p {
+		font-size: 1.2em;
+	}
+	.error-404 button {
+		font-size: 1.2em;
+		padding: 15px 40px;
+		margin-top: 50px;
+	}
+}
