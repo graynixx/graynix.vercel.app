@@ -46,6 +46,13 @@ nav {
 	z-index: 999;
 }
 
+nav ul li {
+	opacity: 0;
+	transform: translateY(-10px);
+	animation: fadeInNav 0.5s forwards;
+	animation-delay: calc(0.2s * var(--i));
+}
+
 nav ul {
 	display: flex;
 	gap: 1.5em;
@@ -60,11 +67,14 @@ nav ul li a {
 
 nav ul li a:hover {
 	color: var(--main-color);
+	text-shadow: 0 0 12px var(--main-color);
 }
 
 .projects h2 {
 	font-size: 3em;
 	margin-bottom: 20px;
+	color: var(--main-color);
+	text-shadow: 0 0 12px var(--main-color);
 }
 
 .projects p {
@@ -166,6 +176,18 @@ nav ul li a:hover {
 .projects-links a:hover {
 	transform: scale(1.2);
 	color: var(--main-color);
+	text-shadow: 0 0 8px var(--main-color);
+}
+
+@keyframes fadeInNav {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 @media (max-width: 768px) {

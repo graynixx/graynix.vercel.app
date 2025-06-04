@@ -41,6 +41,13 @@ p {
 	transform: rotate(90deg);
 }
 
+nav ul li {
+	opacity: 0;
+	transform: translateY(-10px);
+	animation: fadeInNav 0.5s forwards;
+	animation-delay: calc(0.2s * var(--i));
+}
+
 nav {
 	position: absolute;
 	top: 20px;
@@ -61,10 +68,6 @@ nav ul li a {
 	text-decoration: none;
 }
 
-nav ul li a:hover {
-	color: var(--main-color);
-}
-
 .hero {
 	position: relative;
 	z-index: 1;
@@ -79,6 +82,15 @@ nav ul li a:hover {
 .hero h1 {
 	font-size: 4.4em;
 	animation: slideInFromBottom 1s ease-in-out forwards;
+}
+
+.hero h1,
+.aboutme h2,
+.skills-title,
+nav ul li a:hover,
+footer p {
+	color: var(--main-color);
+	text-shadow: 0 0 12px var(--main-color);
 }
 
 .hero p {
@@ -132,6 +144,7 @@ nav ul li a:hover {
 .social a:hover {
 	transform: scale(1.4);
 	color: var(--main-color);
+	text-shadow: 0 0 8px var(--main-color);
 }
 
 .skills-container {
@@ -192,6 +205,17 @@ footer {
 	color: #888;
 	font-size: 0.9em;
 	padding: 20px 10px;
+}
+
+@keyframes fadeInNav {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 @keyframes slideInFromBottom {
