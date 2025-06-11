@@ -1,4 +1,4 @@
-# graynixx.vercel.app
+# graynix.vercel.app
 
 This is the code for my personal website!
 Some things might not work perfectly, but don't worry — I'll fix them eventually!
